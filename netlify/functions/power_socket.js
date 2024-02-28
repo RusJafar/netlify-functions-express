@@ -4,6 +4,10 @@ exports.handler = async (event, context) => {
         body: JSON.stringify({
             data: null,
             error: null
-        })
+        }),
+        headers: {
+            'Content-Type': 'application/json; charset=utf-8',
+            'Access-Control-Allow-Origin': '*',
+        }
     }
 }
