@@ -1,5 +1,5 @@
 
 [[redirects]]
-from = "/api/*"
+from = "/agent/*"
 to = "/.netlify/functions/:splat"
 status = 200
