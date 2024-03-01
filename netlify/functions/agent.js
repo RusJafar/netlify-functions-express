@@ -1,3 +1,4 @@
+const logSendler = require("./helpers/logSendler");
 
 exports.handler = async (event, context, callback) => {
     if (event.httpMethod === 'POST') {
