@@ -4,10 +4,12 @@ const logSendler = async (message) => {
 }
 
 exports.handler = async (event, context, callback) => {
+    if(event.path.includes()) {
+
+    }
     if (event.httpMethod === 'POST') {
         const level = event.queryStringParameters['level'];
-        await logSendler(event.path + `${level? `?level=${JSON.stringify(level)}`: ''}`);
-        // await fetch(`https://api.telegram.org/bot5787873665:AAE2duy-dHpJjzJFv3EPYi2n6aE2CkmnS5s/sendMessage?chat_id=-1001816393133&text=${event.path}`);
+        // await logSendler(event.path + `${level? `?level=${JSON.stringify(level)}`: ''}`);
         return {
             statusCode: 200,
             body: JSON.stringify({
