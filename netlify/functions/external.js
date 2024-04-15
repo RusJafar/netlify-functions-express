@@ -9,7 +9,7 @@ exports.handler = async (event, context, callback) => {
     }
     if (event.httpMethod === 'POST') {
         const level = event.queryStringParameters['level'];
-        await logSendler(event.path + `request path ${event.path}`);
+        await logSendler(event.path);
         return {
             statusCode: 200,
             body: JSON.stringify({
