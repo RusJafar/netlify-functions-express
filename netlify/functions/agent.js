@@ -22,6 +22,21 @@ exports.handler = async (event, context, callback) => {
             }
         }
     }
+    if (event.httpMethod === 'GET') {
+        const level = event.queryStringParameters['level'];
+        // await logSendler(event.path + `${level? `?level=${JSON.stringify(level)}`: ''}`);
+        return {
+            statusCode: 200,
+            body: JSON.stringify({
+                data: null,
+                error: null
+            }),
+            headers: {
+                'Content-Type': 'application/json; charset=utf-8',
+                'Access-Control-Allow-Origin': '*',
+            }
+        }
+    }
 
     return {
         statusCode: 404,
