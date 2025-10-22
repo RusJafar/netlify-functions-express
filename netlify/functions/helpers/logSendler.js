@@ -1,6 +1,19 @@
 const logSendler = async (message) => {
-    const msg = `KNX_log: ${message}`;
-    await fetch(`https://api.telegram.org/bot5787873665:AAE2duy-dHpJjzJFv3EPYi2n6aE2CkmnS5s/sendMessage?chat_id=-1001816393133&text=${msg}`);
+    const timeout =  2000;
+    setTimeout(() => {
+        return {
+            statusCode: 200,
+            body: JSON.stringify({
+                data: `Timeout ${timeout}`,
+                error: null
+            }),
+            headers: {
+                'Content-Type': 'application/json; charset=utf-8',
+                'Access-Control-Allow-Origin': '*',
+            }
+        }
+    }, 2000);
+    
 }
 
 export default logSendler;
