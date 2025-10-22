@@ -1,6 +1,6 @@
 const logSendler = async (message) => {
     const timeout =  2000;
-    setTimeout(() => {
+    await setTimeout(() => {
         return {
             statusCode: 200,
             body: JSON.stringify({
