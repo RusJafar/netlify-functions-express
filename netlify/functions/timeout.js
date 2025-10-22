@@ -1,3 +1,5 @@
+const doDelay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
 exports.handler = async (event, context, callback) => {
    
     let delay = event.queryStringParameters['delay'];
@@ -7,7 +9,9 @@ exports.handler = async (event, context, callback) => {
         delay = 2000;
     }
 
-    await setTimeout(() => {
+    await doDelay(delay)
+
+   
         return {
             statusCode: 200,
             body: JSON.stringify({
@@ -19,6 +23,5 @@ exports.handler = async (event, context, callback) => {
                 'Access-Control-Allow-Origin': '*',
             }
         }
-    }, delay);
     
 }
